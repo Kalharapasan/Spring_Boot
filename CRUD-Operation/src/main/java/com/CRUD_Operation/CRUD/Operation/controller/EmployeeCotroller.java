@@ -18,14 +18,11 @@ public class EmployeeCotroller {
 
     @PostMapping
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
-
         return employeeService.saveEmployee(employee);
-
     }
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployees() {
-
         return employeeService.getAllEmployee();
     }
 
