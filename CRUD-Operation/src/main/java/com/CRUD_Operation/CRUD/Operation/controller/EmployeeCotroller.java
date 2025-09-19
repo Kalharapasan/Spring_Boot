@@ -25,6 +25,26 @@ public class EmployeeCotroller {
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployees() {
+
         return employeeService.getAllEmployee();
     }
+
+    @GetMapping("/{employeeId}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long employeeId ) {
+        return employeeService.getEmployeeById(employeeId);
+
+    }
+
+    @PutMapping("/{employeeId}")
+    public ResponseEntity<Employee>updateEmployee(@PathVariable Long employeeId,@RequestBody Employee employee ) {
+            return employeeService.updateEmployee(employeeId,employee);
+    }
+
+    @DeleteMapping("/{employeeId}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable Long employeeId) {
+        return employeeService.deleteEmployee(employeeId);
+    }
+
+
+
 }
