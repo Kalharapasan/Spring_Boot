@@ -8,31 +8,27 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table (name = "employee")
+@Table (name = "EMPLOYEE")
 
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="EMPLYEE_ID")
-    private  Long employeeId;
+    @Column(name = "EMPLOYEE_ID")
+    private Long employeeId;
 
-    @Column(name="FIRST_NAME",length = 100)
+    @Column(name = "FIRST_NAME", length = 100)
     private String firstName;
 
-    @Column(name="LAST_NAME",length = 100)
+    @Column(name = "LAST_NAME", length = 100)
     private String lastName;
 
-    @Column(name="EMAIL")
+    @Column(name = "EMAIL")
     private String email;
 
-    @Column(name="AGE")
-    private  int age;
+    @Column(name = "AGE")
+    private Integer age;
 
-    @Column(name="ADDRESS")
-    private  String address;
-
-
-
-
+    @Column(name = "ADDRESS")
+    private String address;
 }
