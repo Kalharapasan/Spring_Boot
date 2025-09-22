@@ -14,10 +14,11 @@ import lombok.Setter;
 @Table(name="Client")
 
 public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Client_Id")
-    private Long employeeId;
+    @Column(name = "CLIENT_ID")
+    private Long clientId;
 
     @Column(name = "FIRST_NAME", length = 100)
     private String firstName;
@@ -33,4 +34,6 @@ public class Client {
 
     @Column(name = "ADDRESS")
     private String address;
+
+
 }
