@@ -23,7 +23,17 @@ public class AdminController {
     public ResponseEntity<Admin>  saveAdmin(@RequestBody Admin admin){
         return adminService.saveAdmin(admin);
     }
-
-
-
+    
+    @GetMapping ("/{adminId}")
+    public ResponseEntity<Admin> getAdminById(@PathVariable Long adminId){
+        return adminService.getAdminByID(adminId);
+    }
+    @PutMapping("/{adminId}")
+    public ResponseEntity<Admin> updateAdmin(@PathVariable Long adminId,@RequestBody Admin admin){
+        return  adminService.updateAdmin(adminId,admin);
+    }
+    @DeleteMapping ("/{adminId}")
+    public ResponseEntity<String> deleteAdmin(@PathVariable Long adminId){
+        return adminService.deleteAdmin(adminId);
+    }
 }
