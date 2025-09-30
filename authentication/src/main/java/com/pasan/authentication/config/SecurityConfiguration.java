@@ -10,15 +10,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import java.util.logging.Filter;
-
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-
 public class SecurityConfiguration {
+
     private final JWTAuthenticationFilter jwtAuthFilter;
-    private AuthenticationProvider atheticationProvider;
+    private final AuthenticationProvider atheticationProvider;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -26,7 +24,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("")
+                .requestMatchers("/")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -39,5 +37,4 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
 }
